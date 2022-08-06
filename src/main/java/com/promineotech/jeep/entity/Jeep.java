@@ -11,8 +11,8 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Jeep {
-  private Long modelPK;
-  private JeepModel modelID;
+  private Long modelPk;
+  private JeepModel modelId;
   private String trimLevel;
   private int numDoors;
   private int wheelSize;
