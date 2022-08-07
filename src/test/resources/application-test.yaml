@@ -1,3 +1,7 @@
+spring:
+ datasource:
+   url: jdbc:h2:mem:jeep;MODE=MYSQL
+   
 logging:
   level:
     root: warn
