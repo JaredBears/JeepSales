@@ -30,8 +30,8 @@ class FetchJeepTest extends FetchJeepTestSupport {
   @Autowired
   private JdbcTemplate jdbcTemplate;
 
-  @Disabled
   @Test
+  @Disabled
   void testDb() {
     int numrows = JdbcTestUtils.countRowsInTable(jdbcTemplate, "customers");
     System.out.println("num=" + numrows);
@@ -52,8 +52,12 @@ class FetchJeepTest extends FetchJeepTestSupport {
     assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 
     // And: the actual list returned is the same as the expected list;
+    List<Jeep> actual = response.getBody();
     List<Jeep> expected = buildExpected();
-    assertThat(response.getBody()).isEqualTo(expected);
+    
+    //actual.forEach(jeep -> jeep.setModelPk(null));
+    
+    assertThat(actual).isEqualTo(expected);
   }
 
 }
